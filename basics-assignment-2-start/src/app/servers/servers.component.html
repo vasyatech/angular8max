@@ -1,0 +1,11 @@
+<label>User name</label>
+<input
+  type="text"
+  class="form-control"
+  [(ngModel)]="userName">
+<p>User name: {{ userName }}</p>
+<button
+  type="button"
+  class="bt btn-primary"
+  [disabled]="userName === ''"
+  (click)="onSaveClick()">Save</button>
