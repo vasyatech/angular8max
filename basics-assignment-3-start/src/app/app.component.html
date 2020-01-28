@@ -2,12 +2,21 @@
   <div class="row">
     <div class="col-xs-12">
       <ol>
-        <li>Add A button which says 'Display Details'</li>
+        <li>Add a button which says 'Display Details'</li>
         <li>Add a paragraph with any content of your choice (e.g. 'Secret Password = tuna')</li>
         <li>Toggle the displaying of that paragraph with the button created in the first step</li>
         <li>Log all button clicks in an array and output that array below the secret paragraph (maybe log a timestamp or simply an incrementing number)</li>
         <li>Starting at the 5th log item, give all future log items a blue background (via ngStyle) and white color (ngClass)</li>
       </ol>
+      <button 
+        class="btn btn-primary"
+        (click)="onShowHideContent()">{{buttonCaption}}</button>
+      <p *ngIf="showContent">This is a top-secret information</p>
+      <p *ngFor="let logItem of logItems; let i = index" 
+         [ngStyle]="{'background-color': i>=4 ? 'blue' : 'white'}" 
+         [ngClass]="{'whiteColor': i>=4 }">
+        Record {{i+1}} : {{logItem}}
+      </p>      
     </div>
   </div>
 </div>
