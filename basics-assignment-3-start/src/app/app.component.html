@@ -14,7 +14,7 @@
       <p *ngIf="showContent">This is a top-secret information</p>
       <p *ngFor="let logItem of logItems; let i = index" 
          [ngStyle]="{'background-color': i>=4 ? 'blue' : 'white'}" 
-         [ngClass]="{'whiteColor': i>=4 }">
+         [ngClass]="{'white-color': i>=4 }">
         Record {{i+1}} : {{logItem}}
       </p>      
     </div>
